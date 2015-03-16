@@ -3,7 +3,7 @@ require 'spec_helper'
 class PermissionsController < ActionController::Base
   include Clearance::Controller
 
-  before_filter :require_login, only: :show
+  before_action :require_login, only: :show
 
   def new
     render text: 'New page'

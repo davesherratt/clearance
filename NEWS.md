@@ -41,7 +41,7 @@ complete changelog, see the git history.
 
 ### Deprecated
 - The `authorize` filter has been deprecated in favor of `require_login`. Update
-  all reference to the filter including any calls to `skip_before_filter` or
+  all reference to the filter including any calls to `skip_before_action` or
   `skip_before_action`.
 - The `Clearance.root` method has been deprecated. It was used internally and
   unlikely to impact external users.
@@ -334,7 +334,7 @@ complete changelog, see the git history.
   other styles of authentication.
 
 ### Changed
-- `before_filter :authenticate` API replaced with more aptly-named `before_filter
+- `before_action :authenticate` API replaced with more aptly-named `before_action
   :authorize`.
 
 ### Removed
@@ -449,7 +449,7 @@ complete changelog, see the git history.
 
 ### Fixed
 - Fixed global sign out bug.
-- Allow Rails apps to `before_filter :authenticate` the entire app
+- Allow Rails apps to `before_action :authenticate` the entire app
   in `ApplicationController` and still have password recovery work without
   overriding any controllers.
 - Rails 3 fix for `ActionController`/`ActionDispatch` change.
@@ -464,7 +464,7 @@ complete changelog, see the git history.
 
 ### Fixed
 - Clearance features capitalization should match view text.
-- Skip `:authenticate before_filter` in controllers so apps can easily
+- Skip `:authenticate before_action` in controllers so apps can easily
   authenticate a whole site without subclassing.
 - Added randomness to token and salt generation,
 - Reset the `remember_token` on sign out instead of sign in. Allows for the same
@@ -569,7 +569,7 @@ complete changelog, see the git history.
 - `flash_success_after_create`, `flash_notice_after_create`,
   `flash_failure_after_create`, `flash_sucess_after_update`,
   `flash_success_after_destroy`, etc.
-- Added `#create` to forbidden `before_filters` on confirmations controller.
+- Added `#create` to forbidden `before_actions` on confirmations controller.
 
 ### Fixed
 - `should_be_signed_in_as` shouldn't look in the session.

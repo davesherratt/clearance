@@ -1,7 +1,7 @@
 class Clearance::SessionsController < Clearance::BaseController
-  before_filter :redirect_signed_in_users, only: [:new]
-  skip_before_filter :require_login, only: [:create, :new, :destroy]
-  skip_before_filter :authorize, only: [:create, :new, :destroy]
+  before_action :redirect_signed_in_users, only: [:new]
+  skip_before_action :require_login, only: [:create, :new, :destroy]
+  skip_before_action :authorize, only: [:create, :new, :destroy]
 
   def create
     @user = authenticate(params)
