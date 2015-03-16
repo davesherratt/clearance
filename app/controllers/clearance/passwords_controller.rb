@@ -1,4 +1,4 @@
-require 'active_support/deprecation'
+require 'active_support'
 
 class Clearance::PasswordsController < Clearance::BaseController
   skip_before_action :require_login, only: [:create, :edit, :new, :update]
